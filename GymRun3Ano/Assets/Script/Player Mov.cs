@@ -36,17 +36,22 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (((1 << collision.gameObject.layer) & groundLayer) != 0)
+       
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.transform.CompareTag("Grounded"))
         {
             isGrounded = true;
         }
     }
-
-    private void OnTriggerExit2D(Collider2D collision)
+    private void OnCollisionExit2D(Collision2D collision)
     {
-        if (((1 << collision.gameObject.layer) & groundLayer) != 0)
+        if (collision.gameObject.transform.CompareTag("Grounded"))
         {
             isGrounded = false;
         }
     }
+
 }
