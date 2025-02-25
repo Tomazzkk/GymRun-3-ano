@@ -23,7 +23,19 @@ public class PlayerMovement : MonoBehaviour
     void Move()
     {
         float moveInput = Input.GetAxis("Horizontal");
-        rb.velocity = new Vector2(moveInput * speed, rb.velocity.y);
+        if (this.transform.position.x >= -8.1f && moveInput <= 0)
+        {
+
+            rb.velocity = new Vector2(moveInput * speed, rb.velocity.y);
+
+        }
+        
+        if(this.transform.position.x <= 8.1f && moveInput >=0 )
+        {
+            rb.velocity = new Vector2(moveInput * speed, rb.velocity.y);
+
+        }
+        
     }
 
     void Jump()
