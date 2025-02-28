@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public int maxSegments = 3;          // Quantidade máxima de segmentos ativos
     public float segmentWidth = 20f;     // Largura de cada segmento
     public float offsetPos;
+    public int randomInt;
 
     public List<GameObject> mapas = new List<GameObject>();
     private List<GameObject> activeSegments = new List<GameObject>();
@@ -35,7 +36,8 @@ public class GameManager : MonoBehaviour
 
     void SpawnSegment()
     {
-        GameObject newSegment = Instantiate(mapSegmentPrefab, nextSpawnPosition, Quaternion.identity);
+        randomInt = Random.Range(0, mapas.Count);
+        GameObject newSegment = Instantiate(mapas[randomInt], nextSpawnPosition, Quaternion.identity);
         activeSegments.Add(newSegment);
         nextSpawnPosition.x += segmentWidth + offsetPos; // Atualiza posição para o próximo segmento
         RemoveOldSegment();
