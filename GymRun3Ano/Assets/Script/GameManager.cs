@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public float segmentWidth = 20f;     // Largura de cada segmento
     public float offsetPos;
 
+    public List<GameObject> mapas = new List<GameObject>();
     private List<GameObject> activeSegments = new List<GameObject>();
     private Vector3 nextSpawnPosition;   // Próxima posição para spawnar um segmento
 
