@@ -209,7 +209,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.34, z: -10}
+  m_LocalPosition: {x: 5.72, y: 3.48, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -284,6 +284,7 @@ MonoBehaviour:
   mapas:
   - {fileID: 321005061686540001, guid: 926c4053781e37440a3774b5bca1a8ad, type: 3}
   - {fileID: 2452073263951845714, guid: 67e9ad60988e38e4192fd060de9438f5, type: 3}
+  - {fileID: 4824246445374428318, guid: 78cf10df942f78c4cbe803af18827c4d, type: 3}
 --- !u!4 &1199263867
 Transform:
   m_ObjectHideFlags: 0
@@ -442,7 +443,7 @@ Transform:
   m_GameObject: {fileID: 1914021235}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.4, z: 0}
+  m_LocalPosition: {x: -7.04, y: 3.31, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
