@@ -280,6 +280,7 @@ MonoBehaviour:
   maxSegments: 3
   segmentWidth: 15
   offsetPos: 5
+  randomInt: 0
   mapas:
   - {fileID: 321005061686540001, guid: 926c4053781e37440a3774b5bca1a8ad, type: 3}
   - {fileID: 2452073263951845714, guid: 67e9ad60988e38e4192fd060de9438f5, type: 3}
@@ -378,7 +379,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!212 &1914021238
 SpriteRenderer:
