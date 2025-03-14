@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask groundLayer;
 
     private Rigidbody2D rb;
-    private bool isGrounded;
+    public bool isGrounded;
 
     void Start()
     {
@@ -19,23 +19,12 @@ public class PlayerMovement : MonoBehaviour
         Move();
         Jump();
     }
-
     void Move()
     {
         float moveInput = Input.GetAxis("Horizontal");
-        
-
-            rb.velocity = new Vector2(moveInput * speed, rb.velocity.y);
-
-        
-        
-        
-            rb.velocity = new Vector2(moveInput * speed, rb.velocity.y);
-
-        
-        
+            rb.velocity = new Vector2(moveInput * speed, rb.velocity.y);              
+            rb.velocity = new Vector2(moveInput * speed, rb.velocity.y);      
     }
-
     void Jump()
     {
         if (Input.GetButtonDown("Jump") && isGrounded)
@@ -43,24 +32,23 @@ public class PlayerMovement : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
         }
     }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
        
     }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.transform.CompareTag("Grounded"))
-        {
-            isGrounded = true;
-        }
-    }
+ 
     private void OnCollisionExit2D(Collision2D collision)
     {
         if (collision.gameObject.transform.CompareTag("Grounded"))
         {
             isGrounded = false;
+        }
+    }
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.gameObject.transform.CompareTag("Grounded"))
+        {
+            isGrounded = true;
         }
     }
 
