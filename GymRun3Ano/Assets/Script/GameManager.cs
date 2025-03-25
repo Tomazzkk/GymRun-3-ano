@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -10,7 +11,8 @@ public class GameManager : MonoBehaviour
     public float segmentWidth = 20f;     // Largura de cada segmento
     public float offsetPos;
     public int randomInt;
-
+    [SerializeField] GameObject pausePanel;
+    [SerializeField] GameObject pauseButton;
     public List<GameObject> mapas = new List<GameObject>();
     private List<GameObject> activeSegments = new List<GameObject>();
     private Vector3 nextSpawnPosition;   // Próxima posição para spawnar um segmento
@@ -52,5 +54,26 @@ public class GameManager : MonoBehaviour
             Destroy(oldSegment);
         }
     }
+
+    public void Pause()
+    {
+        Time.timeScale = 0;
+        pausePanel.SetActive(true);
+        pauseButton.SetActive(false);
+    }
+
+    public void VoltarButton()
+    {
+        pauseButton.SetActive(true);
+        pausePanel.SetActive(false);
+        Time.timeScale = 1;
+    }
+
+    public void MenuButton()
+    {
+        SceneManager.LoadScene("Menu");
+    }
+    
+    
 
 }
