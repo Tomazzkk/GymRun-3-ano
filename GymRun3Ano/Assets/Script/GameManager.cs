@@ -85,6 +85,7 @@ public class GameManager : MonoBehaviour
     {
         //Time.timeScale = 1;
         panelDica.SetActive(false);
+        Debug.Log("Botão FeitoButton foi pressionado!");
     }
     
 
