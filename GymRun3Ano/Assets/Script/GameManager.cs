@@ -15,8 +15,15 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject pauseButton;
     public List<GameObject> mapas = new List<GameObject>();
     private List<GameObject> activeSegments = new List<GameObject>();
-    private Vector3 nextSpawnPosition;   // Próxima posição para spawnar um segmento
+    private Vector3 nextSpawnPosition; // Próxima posição para spawnar um segmento
+    public GameObject panelDica;
+    public int quantcoletada;
+    public static GameManager instance;
 
+    private void Awake()
+    {
+        instance = this;
+    }
     void Start()
     {
         // Inicia criando os primeiros segmentos
@@ -74,6 +81,11 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("Menu");
     }
     
+    public void FeitoButton()
+    {
+        //Time.timeScale = 1;
+        panelDica.SetActive(false);
+    }
     
 
 }
