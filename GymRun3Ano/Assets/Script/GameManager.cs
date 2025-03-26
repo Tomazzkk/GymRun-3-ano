@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -19,13 +21,17 @@ public class GameManager : MonoBehaviour
     public GameObject panelDica;
     public int quantcoletada;
     public static GameManager instance;
-
+    public Button meuBotao;
     private void Awake()
     {
         instance = this;
     }
     void Start()
     {
+        if (meuBotao != null)
+        {
+            meuBotao.onClick.AddListener(FeitoButton);
+        }
         // Inicia criando os primeiros segmentos
         for (int i = 0; i < maxSegments; i++)
         {

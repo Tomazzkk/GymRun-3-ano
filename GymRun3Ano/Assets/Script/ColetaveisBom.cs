@@ -33,7 +33,7 @@ public class ColetaveisBom : MonoBehaviour
         if (GameManager.instance.quantcoletada >= 1)
         {
             GameManager.instance.panelDica.SetActive(true);
-            Time.timeScale = 0;
+            Time.timeScale = 1;
         }
                 
     }
