@@ -23,17 +23,19 @@ public class ColetaveisBom : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             Destroy(gameObject);
-            GameManager.instance.quantcoletada++;
+            GameManager.instance.contdicas++;
+
 
         }
     }
 
     public void PainelDica()
     {
-        if (GameManager.instance.quantcoletada >= 1)
+        if (GameManager.instance.contdicas >= 10)
         {
             GameManager.instance.panelDica.SetActive(true);
-            Time.timeScale = 1;
+            Time.timeScale = 0;
+            GameManager.instance.contdicas = 0;
         }
                 
     }

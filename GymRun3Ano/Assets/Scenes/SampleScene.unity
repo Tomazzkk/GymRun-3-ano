@@ -206,17 +206,17 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1199263866}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: FeitoButton
-        m_Mode: 1
+      - m_Target: {fileID: 955838077}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!114 &125716981
 MonoBehaviour:
@@ -1502,7 +1502,7 @@ MonoBehaviour:
   - {fileID: 321005061686540001, guid: 926c4053781e37440a3774b5bca1a8ad, type: 3}
   - {fileID: 2452073263951845714, guid: 67e9ad60988e38e4192fd060de9438f5, type: 3}
   - {fileID: 4824246445374428318, guid: 78cf10df942f78c4cbe803af18827c4d, type: 3}
-  panelDica: {fileID: 0}
+  panelDica: {fileID: 955838077}
   quantcoletada: 0
 --- !u!4 &1199263867
 Transform:

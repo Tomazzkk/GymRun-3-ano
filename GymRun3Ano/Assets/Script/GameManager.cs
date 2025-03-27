@@ -19,19 +19,16 @@ public class GameManager : MonoBehaviour
     private List<GameObject> activeSegments = new List<GameObject>();
     private Vector3 nextSpawnPosition; // Próxima posição para spawnar um segmento
     public GameObject panelDica;
-    public int quantcoletada;
+    public int contdicas;
     public static GameManager instance;
-    public Button meuBotao;
+    
     private void Awake()
     {
         instance = this;
     }
     void Start()
     {
-        if (meuBotao != null)
-        {
-            meuBotao.onClick.AddListener(FeitoButton);
-        }
+       
         // Inicia criando os primeiros segmentos
         for (int i = 0; i < maxSegments; i++)
         {
@@ -89,7 +86,7 @@ public class GameManager : MonoBehaviour
     
     public void FeitoButton()
     {
-        //Time.timeScale = 1;
+        Time.timeScale = 1;
         panelDica.SetActive(false);
         Debug.Log("Botão FeitoButton foi pressionado!");
     }
