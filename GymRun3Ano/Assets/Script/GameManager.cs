@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     public GameObject mapSegmentPrefab;  // Prefab da parte do mapa
     public Transform player;             // Referência ao jogador
     public int maxSegments = 3;          // Quantidade máxima de segmentos ativos
-    public float segmentWidth = 20f;     // Largura de cada segmento
+    public float segmentWidth = 10f;     // Largura de cada segmento
     public float offsetPos;
     public int randomInt;
     [SerializeField] GameObject pausePanel;
@@ -25,10 +25,15 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         instance = this;
+    
     }
     void Start()
     {
-       
+
+        GameObject newSegment = Instantiate(mapSegmentPrefab, nextSpawnPosition, Quaternion.identity);
+        activeSegments.Add(newSegment);
+        nextSpawnPosition.x += segmentWidth + offsetPos; // Atualiza posição para o próximo segmento
+        RemoveOldSegment();
         // Inicia criando os primeiros segmentos
         for (int i = 0; i < maxSegments; i++)
         {
