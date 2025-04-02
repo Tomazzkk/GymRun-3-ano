@@ -544,6 +544,8 @@ MonoBehaviour:
   pausePanel: {fileID: 0}
   pauseButton: {fileID: 0}
   mapas: []
+  panelDica: {fileID: 0}
+  contdicas: 0
 --- !u!4 &871589302
 Transform:
   m_ObjectHideFlags: 0
