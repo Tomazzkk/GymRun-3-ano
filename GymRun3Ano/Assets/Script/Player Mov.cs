@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -8,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
 
     private Rigidbody2D rb;
     public bool isGrounded;
+    public List<AudioClip> audios; 
 
     void Start()
     {
@@ -30,12 +32,11 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+            GetComponent<AudioSource>().clip = audios[0];
+            GetComponent<AudioSource>().Play();
         }
     }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-       
-    }
+
  
     private void OnCollisionExit2D(Collision2D collision)
     {
