@@ -9,7 +9,13 @@ public class PlayerMovement : MonoBehaviour
 
     private Rigidbody2D rb;
     public bool isGrounded;
-    public List<AudioClip> audios; 
+    public List<AudioClip> audios;
+    public static PlayerMovement instance;
+
+    private void Awake()
+    {
+        instance = this;
+    }
 
     void Start()
     {
