@@ -26,6 +26,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        GameOver(); 
         Move();
         Jump();
     }
@@ -66,8 +67,26 @@ public class PlayerMovement : MonoBehaviour
         {
             GameObject.Find("Image").GetComponent<Image>().fillAmount += 0.05f;
         }
+
+        if (collision.gameObject.CompareTag("ComidaRuim"))
+        {
+            GameObject.Find("Image").GetComponent<Image>().fillAmount -= 0.05f;
+        }
     }
 
+    public void GameOver()
+    {
+        if (GameObject.Find("Image").GetComponent<Image>().fillAmount <= 0.1f)
+        {
+            GameManager.instance.gameOverPanel.SetActive(true);
+            Debug.Log("ta certo");
+        }
+    }
+
+    public void BotaoVoltarGameOver()
+    {
+        GameManager.instance.gameOverPanel.SetActive(false);
+    }
 
 
 

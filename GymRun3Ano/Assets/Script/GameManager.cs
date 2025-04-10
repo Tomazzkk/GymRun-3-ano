@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
     public GameObject panelDica;
     public int contdicas;
     public static GameManager instance;
+    public GameObject gameOverPanel;
     
     private void Awake()
     {

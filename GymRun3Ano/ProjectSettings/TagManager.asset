@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Grounded
   - obj
+  - ComidaRuim
   layers:
   - Default
   - TransparentFX
