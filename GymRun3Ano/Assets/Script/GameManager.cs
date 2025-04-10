@@ -95,6 +95,8 @@ public class GameManager : MonoBehaviour
         panelDica.SetActive(false);
         Debug.Log("Botão FeitoButton foi pressionado!");
     }
+
+    
     
 
 }

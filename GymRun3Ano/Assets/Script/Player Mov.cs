@@ -1,5 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -58,5 +60,15 @@ public class PlayerMovement : MonoBehaviour
             isGrounded = true;
         }
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("obj"))
+        {
+            GameObject.Find("Image").GetComponent<Image>().fillAmount += 0.05f;
+        }
+    }
+
+
+
 
 }
