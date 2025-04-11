@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
@@ -79,13 +80,16 @@ public class PlayerMovement : MonoBehaviour
         if (GameObject.Find("Image").GetComponent<Image>().fillAmount <= 0.1f)
         {
             GameManager.instance.gameOverPanel.SetActive(true);
+            GameObject.Find("Image").GetComponent<Image>().fillAmount += 0.05f;
             Debug.Log("ta certo");
+            Time.timeScale = 0;
         }
     }
 
     public void BotaoVoltarGameOver()
     {
         GameManager.instance.gameOverPanel.SetActive(false);
+        SceneManager.LoadScene("SampleScene");
     }
 
 
