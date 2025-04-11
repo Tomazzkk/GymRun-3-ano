@@ -90,6 +90,7 @@ public class PlayerMovement : MonoBehaviour
     {
         GameManager.instance.gameOverPanel.SetActive(false);
         SceneManager.LoadScene("SampleScene");
+        Time.timeScale = 1;
     }
 
 
