@@ -9,6 +9,8 @@ public class PlayerMovement : MonoBehaviour
     public float speed = 5f;
     public float jumpForce = 10f;
     public LayerMask groundLayer;
+    public bool imune;
+    public float Tempo;
 
     private Rigidbody2D rb;
     public bool isGrounded;
@@ -27,7 +29,24 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        GameOver(); 
+        if (imune == true)
+
+        {
+            Tempo += Time.deltaTime;
+            if (Tempo >= 5)
+            {
+                imune = false;
+                Tempo = 0;
+            }
+
+        }
+
+        if (GameObject.Find("Image").GetComponent<Image>().fillAmount <= 0.1f)
+        {
+            GameOver();
+        }
+
+       
         Move();
         Jump();
     }
@@ -73,17 +92,28 @@ public class PlayerMovement : MonoBehaviour
         {
             GameObject.Find("Image").GetComponent<Image>().fillAmount -= 0.05f;
         }
+        if (collision.gameObject.CompareTag("Comida rara"))
+        {
+            imune = true;
+            Destroy(collision.gameObject);
+        }
+        if (collision.gameObject.CompareTag("Objeto mortal") && imune == false)
+        {
+         
+            
+        }
+
+
     }
 
     public void GameOver()
     {
-        if (GameObject.Find("Image").GetComponent<Image>().fillAmount <= 0.1f)
-        {
+        
             GameManager.instance.gameOverPanel.SetActive(true);
             GameObject.Find("Image").GetComponent<Image>().fillAmount += 0.05f;
             Debug.Log("ta certo");
             Time.timeScale = 0;
-        }
+        
     }
 
     public void BotaoVoltarGameOver()
