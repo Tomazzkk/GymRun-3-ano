@@ -2220,7 +2220,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af9faed2f4a9d214bbadaa28c65fd48e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mapSegmentPrefab: {fileID: 5466470043139682554, guid: f1e496f4947340744936834143457025, type: 3}
+  mapSegmentPrefab: {fileID: 1636533727583992438, guid: b16d652c3e711e34fbdd4a748fe792c2, type: 3}
   player: {fileID: 1914021239}
   maxSegments: 3
   segmentWidth: 28.45
@@ -2229,9 +2229,10 @@ MonoBehaviour:
   pausePanel: {fileID: 527594126}
   pauseButton: {fileID: 1015078971}
   mapas:
-  - {fileID: 5466470043139682554, guid: 7610ab1f82c893d429616aad73bc14f5, type: 3}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 7977904047855176473, guid: 7493d6e89a1a651409460ad34a623c5f, type: 3}
+  - {fileID: 6186310118862203038, guid: e9fa6d3126c117c4c8a8f2172259517b, type: 3}
+  - {fileID: 5504244058684270369, guid: fd95c13b5debf8b408dc6ed1f04f1457, type: 3}
+  - {fileID: 4079694843853327054, guid: cd07d4d11a18cd84f8741cf564d735b8, type: 3}
   panelDica: {fileID: 955838077}
   contdicas: 0
   gameOverPanel: {fileID: 812523282}
@@ -3224,6 +3225,8 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
+  imune: 0
+  Tempo: 0
   isGrounded: 0
   audios:
   - {fileID: 8300000, guid: c4384d8109c0ca643a11682afd6b9495, type: 3}
