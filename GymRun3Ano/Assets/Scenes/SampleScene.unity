@@ -672,6 +672,34 @@ PrefabInstance:
       propertyPath: m_Name
       value: ComidaRuim
       objectReference: {fileID: 0}
+    - target: {fileID: 4146868450797285380, guid: 5188bb1eafad90346be15ee470e3d729, type: 3}
+      propertyPath: m_Size.x
+      value: 3.047619
+      objectReference: {fileID: 0}
+    - target: {fileID: 4146868450797285380, guid: 5188bb1eafad90346be15ee470e3d729, type: 3}
+      propertyPath: m_Size.y
+      value: 3.047619
+      objectReference: {fileID: 0}
+    - target: {fileID: 4146868450797285380, guid: 5188bb1eafad90346be15ee470e3d729, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: afbd7a7e52818a0478dd53a259ef2abb, type: 3}
+    - target: {fileID: 4146868450797285380, guid: 5188bb1eafad90346be15ee470e3d729, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4146868450797285380, guid: 5188bb1eafad90346be15ee470e3d729, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4146868450797285380, guid: 5188bb1eafad90346be15ee470e3d729, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4146868450797285380, guid: 5188bb1eafad90346be15ee470e3d729, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7673905360555694266, guid: 5188bb1eafad90346be15ee470e3d729, type: 3}
       propertyPath: m_LocalPosition.x
       value: -11.38
@@ -1373,6 +1401,10 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4146868450797285380, guid: 2d3204b898d2c404fb35d685e6874981, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 4bbc530a82aa9de479d6e3a2c836257b, type: 3}
     - target: {fileID: 7673905360555694266, guid: 2d3204b898d2c404fb35d685e6874981, type: 3}
       propertyPath: m_LocalPosition.x
       value: 11.31
@@ -2765,6 +2797,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: ComidaRuim (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4146868450797285380, guid: 5188bb1eafad90346be15ee470e3d729, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 3b9a8535426d3c643aa34d6787caafa4, type: 3}
+    - target: {fileID: 4146868450797285380, guid: 5188bb1eafad90346be15ee470e3d729, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4146868450797285380, guid: 5188bb1eafad90346be15ee470e3d729, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4146868450797285380, guid: 5188bb1eafad90346be15ee470e3d729, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7673905360555694266, guid: 5188bb1eafad90346be15ee470e3d729, type: 3}
       propertyPath: m_LocalPosition.x
       value: -15.19
@@ -2830,6 +2878,10 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4146868450797285380, guid: 2d3204b898d2c404fb35d685e6874981, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 4e9ac863dec618c40bf7930decc4e6dd, type: 3}
     - target: {fileID: 7673905360555694266, guid: 2d3204b898d2c404fb35d685e6874981, type: 3}
       propertyPath: m_LocalPosition.x
       value: 6.32
