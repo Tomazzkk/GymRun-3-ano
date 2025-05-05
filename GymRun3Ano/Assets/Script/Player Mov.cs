@@ -14,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
     public bool isGrounded;
     public List<AudioClip> audios;
     public static PlayerMovement instance;
+    [SerializeField] public Animator Animator;
 
     private void Awake()
     {
@@ -30,6 +31,7 @@ public class PlayerMovement : MonoBehaviour
         GameOver(); 
         Move();
         Jump();
+        VirarJogador();
     }
     void Move()
     {
@@ -93,6 +95,24 @@ public class PlayerMovement : MonoBehaviour
         Time.timeScale = 1;
     }
 
+    public void VirarJogador()
+    {
+        if (Input.GetKey(KeyCode.A))
+        {
+            Animator.SetBool("Running", true);
+            transform.localScale = new Vector3(-1.903597f, 1.903597f, 1.903597f);
+
+        }
+        else if (Input.GetKey(KeyCode.D))
+        {
+            Animator.SetBool("Running", true);
+            transform.localScale = new Vector3(1.903597f, 1.903597f, 1.903597f);
+        }
+        else
+        {
+            Animator.SetBool("Running", false);
+        }
+    }
 
 
 }
