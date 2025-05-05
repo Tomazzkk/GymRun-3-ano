@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -19,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Awake()
     {
+        
         instance = this;
     }
 
@@ -40,12 +40,12 @@ public class PlayerMovement : MonoBehaviour
             }
 
         }
-
+        
         if (GameObject.Find("Image").GetComponent<Image>().fillAmount <= 0.1f)
         {
             GameOver();
         }
-
+        
        
         Move();
         Jump();
