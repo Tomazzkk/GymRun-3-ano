@@ -83,10 +83,10 @@ public class PlayerMov : MonoBehaviour
 
             if (collision.gameObject.CompareTag("ObjMortal"))
             {
-                 if (GameObject.Find("Image").GetComponent<Image>().fillAmount <= 0.99f)
+                 if (GameObject.Find("Image").GetComponent<Image>().fillAmount <= 0.98f)
                  {
 
-                GameOver();
+                  GameOver();
 
                  }
 
