@@ -28,7 +28,6 @@ public class PlayerMov : MonoBehaviour
 
     void Update()
     {
-        //GameOver(); 
         Move();
         Jump();
         VirarJogador();
@@ -68,7 +67,7 @@ public class PlayerMov : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("obj"))
         {
-            GameObject.Find("Image").GetComponent<Image>().fillAmount += 0.05f;
+            GameObject.Find("Image").GetComponent<Image>().fillAmount += 0.99f;
         }
 
         if (collision.gameObject.CompareTag("ComidaRuim"))
@@ -84,8 +83,19 @@ public class PlayerMov : MonoBehaviour
 
             if (collision.gameObject.CompareTag("ObjMortal"))
             {
-            GameOver();
-             }
+                 if (GameObject.Find("Image").GetComponent<Image>().fillAmount <= 0.99f)
+                 {
+
+                GameOver();
+
+                 }
+
+            if (GameObject.Find("Image").GetComponent<Image>().fillAmount >= 0.99f)
+            {
+                GameObject.Find("Image").GetComponent<Image>().fillAmount -= 0.3f;
+            }
+
+            }
     }
 
     public void GameOver()
