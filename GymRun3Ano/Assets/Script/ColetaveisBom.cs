@@ -24,8 +24,8 @@ public class ColetaveisBom : MonoBehaviour
         {
             Destroy(gameObject);
             GameManager.instance.contdicas++;
-            PlayerMovement.instance.GetComponent<AudioSource>().clip = PlayerMovement.instance.audios[1];
-            PlayerMovement.instance.GetComponent<AudioSource>().Play();
+            PlayerMov.instance.GetComponent<AudioSource>().clip = PlayerMov.instance.audios[1];
+            PlayerMov.instance.GetComponent<AudioSource>().Play();
 
 
 

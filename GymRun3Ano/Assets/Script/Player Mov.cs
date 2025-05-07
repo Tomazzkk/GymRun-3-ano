@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMov : MonoBehaviour
 {
     public float speed = 5f;
     public float jumpForce = 10f;
@@ -13,7 +13,7 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb;
     public bool isGrounded;
     public List<AudioClip> audios;
-    public static PlayerMovement instance;
+    public static PlayerMov instance;
     [SerializeField] public Animator Animator;
 
     private void Awake()
