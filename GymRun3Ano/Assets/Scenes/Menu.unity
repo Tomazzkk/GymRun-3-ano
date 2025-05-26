@@ -505,8 +505,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.39235416, y: 0.17114815}
   m_AnchorMax: {x: 0.62, y: 0.24129629}
-  m_AnchoredPosition: {x: 54.241, y: 22.282005}
-  m_SizeDelta: {x: 157.08002, y: 29.76001}
+  m_AnchoredPosition: {x: 55.12, y: 22.14}
+  m_SizeDelta: {x: 153.33032, y: 58.7351}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &534947005
 MonoBehaviour:
@@ -584,8 +584,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 90051e295c5998649b1e82725479d17f, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -737,10 +737,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 2070235524}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 63, y: -835}
-  m_SizeDelta: {x: 1170.5852, y: 50}
+  m_AnchorMin: {x: 0.51041657, y: 0}
+  m_AnchorMax: {x: 0.79170763, y: 0.5}
+  m_AnchoredPosition: {x: -219.5, y: -760}
+  m_SizeDelta: {x: 645.5852, y: -100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &556583233
 MonoBehaviour:
@@ -2096,8 +2096,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.96260434, y: 0.90962964}
-  m_AnchoredPosition: {x: 100.77768, y: 94.40601}
-  m_SizeDelta: {x: 78.19202, y: 63.481537}
+  m_AnchoredPosition: {x: 98.470085, y: 93}
+  m_SizeDelta: {x: 160.62952, y: 144.67004}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1460359528
 MonoBehaviour:
@@ -2175,8 +2175,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 151584c21fb62074685459847ed99e40, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -2250,7 +2250,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Jogar
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2508,7 +2508,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.3301887, g: 0.3301887, b: 0.3301887, a: 1}
+  m_Color: {r: 0.32941177, g: 0.32941177, b: 0.32941177, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -2575,7 +2575,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
