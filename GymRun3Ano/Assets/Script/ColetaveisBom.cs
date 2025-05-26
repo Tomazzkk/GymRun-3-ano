@@ -22,7 +22,7 @@ public class ColetaveisBom : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            Destroy(gameObject);
+            
             GameManager.instance.contdicas++;
             PlayerMov.instance.GetComponent<AudioSource>().clip = PlayerMov.instance.audios[1];
             PlayerMov.instance.GetComponent<AudioSource>().Play();
@@ -31,7 +31,7 @@ public class ColetaveisBom : MonoBehaviour
 
         }
     }
-
+    
     public void PainelDica()
     {
         if (GameManager.instance.contdicas >= 10)

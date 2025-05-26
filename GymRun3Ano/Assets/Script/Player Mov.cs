@@ -68,11 +68,13 @@ public class PlayerMov : MonoBehaviour
         if (collision.gameObject.CompareTag("obj"))
         {
             GameObject.Find("Image").GetComponent<Image>().fillAmount += 0.99f;
+            Destroy(collision.gameObject);
         }
 
         if (collision.gameObject.CompareTag("ComidaRuim"))
         {
             GameObject.Find("Image").GetComponent<Image>().fillAmount -= 0.05f;
+            Destroy(collision.gameObject);
             if (GameObject.Find("Image").GetComponent<Image>().fillAmount <= 0.01f)
             {
                GameOver();
