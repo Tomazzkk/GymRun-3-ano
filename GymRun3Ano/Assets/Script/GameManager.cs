@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject pauseButton;
     public List<GameObject> mapas = new List<GameObject>();
     private List<GameObject> activeSegments = new List<GameObject>();
-    private Vector3 nextSpawnPosition; // Próxima posição para spawnar um segmento
+    public Vector3 nextSpawnPosition; // Próxima posição para spawnar um segmento
     public GameObject panelDica;
     public int contdicas;
     public static GameManager instance;
@@ -30,11 +30,11 @@ public class GameManager : MonoBehaviour
     }
     void Start()
     {
-
+        randomInt = 0;
         GameObject newSegment = Instantiate(mapSegmentPrefab, nextSpawnPosition, Quaternion.identity);
         activeSegments.Add(newSegment);
         nextSpawnPosition.x += segmentWidth + offsetPos; // Atualiza posição para o próximo segmento
-        RemoveOldSegment();
+        //RemoveOldSegment();
         // Inicia criando os primeiros segmentos
         for (int i = 0; i < maxSegments; i++)
         {
@@ -54,10 +54,11 @@ public class GameManager : MonoBehaviour
 
     void SpawnSegment()
     {
-        randomInt = Random.Range(0, mapas.Count);
+        
         GameObject newSegment = Instantiate(mapas[randomInt], nextSpawnPosition, Quaternion.identity);
         activeSegments.Add(newSegment);
         nextSpawnPosition.x += segmentWidth + offsetPos; // Atualiza posição para o próximo segmento
+        randomInt = Random.Range(1, mapas.Count);
         RemoveOldSegment();
     }
 
