@@ -1944,15 +1944,8 @@ MonoBehaviour:
   randomInt: 0
   pausePanel: {fileID: 527594126}
   pauseButton: {fileID: 1015078971}
-  mapas:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 7977904047855176473, guid: 7493d6e89a1a651409460ad34a623c5f, type: 3}
-  - {fileID: 6186310118862203038, guid: e9fa6d3126c117c4c8a8f2172259517b, type: 3}
-  - {fileID: 5504244058684270369, guid: cd07d4d11a18cd84f8741cf564d735b8, type: 3}
-  - {fileID: 4079694843853327054, guid: 43c9052ae4860134692c3aaaec48f139, type: 3}
-  - {fileID: 7843839420502481727, guid: a69f6faa83e6e734fbdae8f56f67a936, type: 3}
+  mapas: []
+  nextSpawnPosition: {x: 0, y: 0, z: 0}
   panelDica: {fileID: 955838077}
   contdicas: 0
   gameOverPanel: {fileID: 812523282}
