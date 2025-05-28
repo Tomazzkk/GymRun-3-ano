@@ -1940,11 +1940,13 @@ MonoBehaviour:
   player: {fileID: 1914021239}
   maxSegments: 3
   segmentWidth: 28.45
-  offsetPos: 10
+  offsetPos: 12
   randomInt: 0
   pausePanel: {fileID: 527594126}
   pauseButton: {fileID: 1015078971}
-  mapas: []
+  mapas:
+  - {fileID: 2221646897389626212, guid: 5fe2cb58b55ca164fa6bf6f67bf0a39d, type: 3}
+  - {fileID: 5001473792776803783, guid: 3eba2a2c48a11174f8221322920f809c, type: 3}
   nextSpawnPosition: {x: 0, y: 0, z: 0}
   panelDica: {fileID: 955838077}
   contdicas: 0
