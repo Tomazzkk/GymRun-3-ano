@@ -62,7 +62,7 @@ public class GameManager : MonoBehaviour
 
         if(randomInt == 20)
         {
-            randomInt = 5;
+            randomInt = 2;
         }
 
         RemoveOldSegment();
