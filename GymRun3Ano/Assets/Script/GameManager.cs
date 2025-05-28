@@ -58,7 +58,13 @@ public class GameManager : MonoBehaviour
         GameObject newSegment = Instantiate(mapas[randomInt], nextSpawnPosition, Quaternion.identity);
         activeSegments.Add(newSegment);
         nextSpawnPosition.x += segmentWidth + offsetPos; // Atualiza posição para o próximo segmento
-        randomInt = Random.Range(1, mapas.Count);
+        randomInt++;
+
+        if(randomInt == 20)
+        {
+            randomInt = 5;
+        }
+
         RemoveOldSegment();
     }
 
