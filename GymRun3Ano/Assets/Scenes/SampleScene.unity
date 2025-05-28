@@ -1011,7 +1011,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.8, y: 14.37, z: -10.8}
+  m_LocalPosition: {x: -9, y: 4.67, z: -10.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1939,8 +1939,8 @@ MonoBehaviour:
   mapSegmentPrefab: {fileID: 1636533727583992438, guid: 8ddcb19efcb5c804996080ee028a32bb, type: 3}
   player: {fileID: 1914021239}
   maxSegments: 3
-  segmentWidth: 28.45
-  offsetPos: 12
+  segmentWidth: 22.2
+  offsetPos: 25.1
   randomInt: 0
   pausePanel: {fileID: 527594126}
   pauseButton: {fileID: 1015078971}
@@ -2165,7 +2165,7 @@ Transform:
   m_GameObject: {fileID: 1207374231}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.8, y: 14.37, z: -10.8}
+  m_LocalPosition: {x: -9, y: 4.67, z: -10.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2738,11 +2738,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7711694221451709227, guid: 35c7e5b164249ec4287e5cf0ec65aba3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.8
+      value: -9
       objectReference: {fileID: 0}
     - target: {fileID: 7711694221451709227, guid: 35c7e5b164249ec4287e5cf0ec65aba3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 10.4
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 7711694221451709227, guid: 35c7e5b164249ec4287e5cf0ec65aba3, type: 3}
       propertyPath: m_LocalPosition.z
