@@ -8,6 +8,7 @@ TagManager:
   - obj
   - ComidaRuim
   - ObjMortal
+  - morre
   layers:
   - Default
   - TransparentFX

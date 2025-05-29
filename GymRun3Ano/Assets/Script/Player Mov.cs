@@ -79,6 +79,9 @@ public class PlayerMov : MonoBehaviour
             {
                GameOver();
             }
+        }if (collision.gameObject.CompareTag("morre"))
+        {
+            GameOver();
         }
 
             
