@@ -960,7 +960,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.354, y: 0.3154607}
   m_AnchorMax: {x: 0.67800003, y: 0.469479}
-  m_AnchoredPosition: {x: -34.773, y: 0.23251}
+  m_AnchoredPosition: {x: -34.77301, y: 0.23251343}
   m_SizeDelta: {x: -69.545, y: -0.46494}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &473183910
@@ -1196,7 +1196,7 @@ GameObject:
   - component: {fileID: 527594129}
   - component: {fileID: 527594128}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: PausePanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
