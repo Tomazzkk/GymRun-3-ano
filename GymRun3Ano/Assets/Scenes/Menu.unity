@@ -505,8 +505,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.39235416, y: 0.17114815}
   m_AnchorMax: {x: 0.62, y: 0.24129629}
-  m_AnchoredPosition: {x: 55.12, y: 22.14}
-  m_SizeDelta: {x: 153.33032, y: 58.7351}
+  m_AnchoredPosition: {x: 55.7, y: 21.9}
+  m_SizeDelta: {x: 163.6994, y: 72.0668}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &534947005
 MonoBehaviour:
@@ -584,7 +584,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 90051e295c5998649b1e82725479d17f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e8d6af58d35300046b9170f97b9434c9, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1228,6 +1228,7 @@ MonoBehaviour:
   pausePanel: {fileID: 0}
   pauseButton: {fileID: 0}
   mapas: []
+  nextSpawnPosition: {x: 0, y: 0, z: 0}
   panelDica: {fileID: 0}
   contdicas: 0
   gameOverPanel: {fileID: 0}
@@ -2175,7 +2176,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 151584c21fb62074685459847ed99e40, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 486be7bceb139e24bbc8948f3622f57c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
