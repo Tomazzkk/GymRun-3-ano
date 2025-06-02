@@ -125,13 +125,15 @@ public class PlayerMov : MonoBehaviour
         if (Input.GetKey(KeyCode.A))
         {
             Animator.SetBool("Running", true);
-            transform.localScale = new Vector3(-1.903597f, 1.903597f, 1.903597f);
+            GetComponent<SpriteRenderer>().flipX = true;
+           // transform.localScale = new Vector3(-1.903597f, 1.903597f, 1.903597f);
 
         }
         else if (Input.GetKey(KeyCode.D))
         {
+            GetComponent<SpriteRenderer>().flipX = false;
             Animator.SetBool("Running", true);
-            transform.localScale = new Vector3(1.903597f, 1.903597f, 1.903597f);
+           // transform.localScale = new Vector3(1.903597f, 1.903597f, 1.903597f);
         }
         else
         {
