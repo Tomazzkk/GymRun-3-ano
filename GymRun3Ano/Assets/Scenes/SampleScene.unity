@@ -1937,7 +1937,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mapSegmentPrefab: {fileID: 0}
   player: {fileID: 1914021239}
-  maxSegments: 3
+  maxSegments: 5
   segmentWidth: 28.45
   offsetPos: 23
   randomInt: 0
@@ -1945,10 +1945,8 @@ MonoBehaviour:
   pauseButton: {fileID: 1015078971}
   mapas:
   - {fileID: 2221646897389626212, guid: 5fe2cb58b55ca164fa6bf6f67bf0a39d, type: 3}
-  - {fileID: 5001473792776803783, guid: 3eba2a2c48a11174f8221322920f809c, type: 3}
-  - {fileID: 8382155275335035756, guid: 98ca41bdb5101ec4d98645337de09e34, type: 3}
-  - {fileID: 621719212314516774, guid: 0be4d98cbbaaaca4696b1343826bf29b, type: 3}
-  - {fileID: 8705771685602662410, guid: d8d7b1f21b34883479024c3606d35643, type: 3}
+  - {fileID: 1794205601952935765, guid: 77bf5f63d4996584babba0cf9d7943f1, type: 3}
+  - {fileID: 2517021498651803372, guid: 73265ee13de193944af5f78a720ba03e, type: 3}
   nextSpawnPosition: {x: 0, y: 0, z: 0}
   panelDica: {fileID: 955838077}
   contdicas: 0
