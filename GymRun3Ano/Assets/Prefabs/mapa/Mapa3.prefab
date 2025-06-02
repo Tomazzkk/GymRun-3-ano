@@ -181,7 +181,7 @@ GameObject:
   - component: {fileID: 5858085566410565181}
   m_Layer: 0
   m_Name: morango remake(1)
-  m_TagString: Untagged
+  m_TagString: obj
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1500,7 +1500,7 @@ GameObject:
   - component: {fileID: 7651712574438192495}
   m_Layer: 0
   m_Name: sorvete(1)
-  m_TagString: Untagged
+  m_TagString: ComidaRuim
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1630,7 +1630,7 @@ GameObject:
   - component: {fileID: 3578844947616819400}
   m_Layer: 0
   m_Name: "fruta ma\xE7\xE3(1)"
-  m_TagString: Untagged
+  m_TagString: obj
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
