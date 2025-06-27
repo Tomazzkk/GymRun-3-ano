@@ -7,17 +7,17 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    public GameObject mapSegmentPrefab;  // Prefab da parte do mapa
+  //  public GameObject mapSegmentPrefab;  // Prefab da parte do mapa
     public Transform player;             // Referência ao jogador
-    public int maxSegments = 3;          // Quantidade máxima de segmentos ativos
-    public float segmentWidth = 10f;     // Largura de cada segmento
-    public float offsetPos;
+   // public int maxSegments = 3;          // Quantidade máxima de segmentos ativos
+    //public float segmentWidth = 10f;     // Largura de cada segmento
+    //public float offsetPos;
     public int randomInt;
     [SerializeField] GameObject pausePanel;
     [SerializeField] GameObject pauseButton;
-    public List<GameObject> mapas = new List<GameObject>();
-    private List<GameObject> activeSegments = new List<GameObject>();
-    public Vector3 nextSpawnPosition; // Próxima posição para spawnar um segmento
+    //public List<GameObject> mapas = new List<GameObject>();
+    //private List<GameObject> activeSegments = new List<GameObject>();
+    //public Vector3 nextSpawnPosition; // Próxima posição para spawnar um segmento
     public GameObject panelDica;
     public int contdicas;
     public static GameManager instance;
@@ -28,6 +28,7 @@ public class GameManager : MonoBehaviour
         instance = this;
     
     }
+    /*
     void Start()
     {
         randomInt = 0;
@@ -42,6 +43,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    
     void Update()
     {
         // Se o jogador ultrapassar a posição do último segmento criado
@@ -51,7 +53,9 @@ public class GameManager : MonoBehaviour
            // Remove o segmento mais antigo
         }
     }
+    
 
+    
     void SpawnSegment()
     {
         
@@ -67,7 +71,9 @@ public class GameManager : MonoBehaviour
 
         RemoveOldSegment();
     }
+    
 
+    
     void RemoveOldSegment()
     {
         if (activeSegments.Count > maxSegments)
@@ -77,6 +83,7 @@ public class GameManager : MonoBehaviour
             Destroy(oldSegment);
         }
     }
+    */
 
     public void Pause()
     {
