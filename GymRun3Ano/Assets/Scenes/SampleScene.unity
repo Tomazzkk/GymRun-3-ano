@@ -1455,7 +1455,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.34, y: 9.77, z: -10.8}
+  m_LocalPosition: {x: 5.3400006, y: 9.77, z: -10.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1834,20 +1834,20 @@ MonoBehaviour:
   m_LookaheadSmoothing: 0
   m_LookaheadIgnoreY: 0
   m_XDamping: 1
-  m_YDamping: 1
+  m_YDamping: 2.6
   m_ZDamping: 1
   m_TargetMovementOnly: 1
   m_ScreenX: 0.5
   m_ScreenY: 0.5
   m_CameraDistance: 10.8
-  m_DeadZoneWidth: 0
-  m_DeadZoneHeight: 0
+  m_DeadZoneWidth: 0.05
+  m_DeadZoneHeight: 0.02
   m_DeadZoneDepth: 0
   m_UnlimitedSoftZone: 0
-  m_SoftZoneWidth: 0.959
-  m_SoftZoneHeight: 0.8
+  m_SoftZoneWidth: 0.26
+  m_SoftZoneHeight: 0.15
   m_BiasX: 0
-  m_BiasY: 0
+  m_BiasY: 0.015
   m_CenterOnActivate: 1
   m_GroupFramingMode: 2
   m_AdjustmentMode: 0
@@ -2467,7 +2467,7 @@ Transform:
   m_GameObject: {fileID: 1207374231}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.34, y: 9.77, z: -10.8}
+  m_LocalPosition: {x: 5.3400006, y: 9.77, z: -10.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3176,21 +3176,25 @@ PrefabInstance:
       propertyPath: m_FlipX
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3614866010317238257, guid: 35c7e5b164249ec4287e5cf0ec65aba3, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 3779b1c80efdbf24c93e9f4fd60f910c, type: 3}
     - target: {fileID: 6587350500764064779, guid: 35c7e5b164249ec4287e5cf0ec65aba3, type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 7711694221451709227, guid: 35c7e5b164249ec4287e5cf0ec65aba3, type: 3}
       propertyPath: m_LocalScale.x
-      value: 4.38
+      value: 4.1
       objectReference: {fileID: 0}
     - target: {fileID: 7711694221451709227, guid: 35c7e5b164249ec4287e5cf0ec65aba3, type: 3}
       propertyPath: m_LocalScale.y
-      value: 4.38
+      value: 4.1
       objectReference: {fileID: 0}
     - target: {fileID: 7711694221451709227, guid: 35c7e5b164249ec4287e5cf0ec65aba3, type: 3}
       propertyPath: m_LocalScale.z
-      value: 4.38
+      value: 4.1
       objectReference: {fileID: 0}
     - target: {fileID: 7711694221451709227, guid: 35c7e5b164249ec4287e5cf0ec65aba3, type: 3}
       propertyPath: m_LocalPosition.x
