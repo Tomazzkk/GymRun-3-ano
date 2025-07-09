@@ -9,12 +9,15 @@ public class PlayerMov : MonoBehaviour
     public float speed = 5f;
     public float jumpForce = 10f;
     public LayerMask groundLayer;
-
+    private float nextDamageTime = 0f;
+    public float damageCooldown = 2f;
+    Animator anim;
     private Rigidbody2D rb;
     public bool isGrounded;
     public List<AudioClip> audios;
     public static PlayerMov instance;
     [SerializeField] public Animator Animator;
+    public float dano= 1 ;
 
     private void Awake()
     {
@@ -23,6 +26,7 @@ public class PlayerMov : MonoBehaviour
 
     void Start()
     {
+        anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -31,6 +35,8 @@ public class PlayerMov : MonoBehaviour
         Move();
         Jump();
         VirarJogador();
+
+       
     }
     void Move()
     {
@@ -42,10 +48,12 @@ public class PlayerMov : MonoBehaviour
     {
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
+            anim.SetBool("Jumping", true);
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
             GetComponent<AudioSource>().clip = audios[0];
             GetComponent<AudioSource>().Play();
         }
+        
     }
 
  
@@ -60,14 +68,34 @@ public class PlayerMov : MonoBehaviour
     {
         if (collision.gameObject.transform.CompareTag("Grounded"))
         {
+            anim.SetBool("Jumping", false);
             isGrounded = true;
         }
+
+        if (collision.gameObject.CompareTag("Inimigo") && Time.time >= nextDamageTime)
+        {
+            Image vida = GameObject.Find("Image").GetComponent<Image>();
+
+            vida.fillAmount -= 0.05f;
+            nextDamageTime = Time.time + damageCooldown;
+
+            if (vida.fillAmount <= 0.01f)
+            {
+                GameOver();
+            }
+        }
+
+        if(collision.gameObject.transform.CompareTag("Inimigo") && Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            EnemyFollow.instance.vida -= dano;
+        }
     }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("obj"))
         {
-            GameObject.Find("Image").GetComponent<Image>().fillAmount += 0.99f;
+            GameObject.Find("Image").GetComponent<Image>().fillAmount += 0.05f;
             Destroy(collision.gameObject);
         }
 
@@ -83,6 +111,8 @@ public class PlayerMov : MonoBehaviour
         {
             GameOver();
         }
+
+       
 
             
 
