@@ -74,7 +74,7 @@ public class PlayerMov : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Inimigo") && Time.time >= nextDamageTime)
         {
-            Image vida = GameObject.Find("Image").GetComponent<Image>();
+            Image vida = GameObject.Find("VidaImage").GetComponent<Image>();
 
             vida.fillAmount -= 0.05f;
             nextDamageTime = Time.time + damageCooldown;
@@ -95,15 +95,15 @@ public class PlayerMov : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("obj"))
         {
-            GameObject.Find("Image").GetComponent<Image>().fillAmount += 0.05f;
+            GameObject.Find("VidaImage").GetComponent<Image>().fillAmount += 0.05f;
             Destroy(collision.gameObject);
         }
 
         if (collision.gameObject.CompareTag("ComidaRuim"))
         {
-            GameObject.Find("Image").GetComponent<Image>().fillAmount -= 0.05f;
+            GameObject.Find("VidaImage").GetComponent<Image>().fillAmount -= 0.05f;
             Destroy(collision.gameObject);
-            if (GameObject.Find("Image").GetComponent<Image>().fillAmount <= 0.01f)
+            if (GameObject.Find("VidaImage").GetComponent<Image>().fillAmount <= 0.01f)
             {
                GameOver();
             }
@@ -118,16 +118,16 @@ public class PlayerMov : MonoBehaviour
 
             if (collision.gameObject.CompareTag("ObjMortal"))
             {
-                 if (GameObject.Find("Image").GetComponent<Image>().fillAmount <= 0.98f)
+                 if (GameObject.Find("VidaImage").GetComponent<Image>().fillAmount <= 0.98f)
                  {
 
                   GameOver();
 
                  }
 
-            if (GameObject.Find("Image").GetComponent<Image>().fillAmount >= 0.99f)
+            if (GameObject.Find("VidaImage").GetComponent<Image>().fillAmount >= 0.99f)
             {
-                GameObject.Find("Image").GetComponent<Image>().fillAmount -= 0.3f;
+                GameObject.Find("VidaImage").GetComponent<Image>().fillAmount -= 0.3f;
             }
 
             }
@@ -137,7 +137,7 @@ public class PlayerMov : MonoBehaviour
     {
        
             GameManager.instance.gameOverPanel.SetActive(true);
-            GameObject.Find("Image").GetComponent<Image>().fillAmount += 0.05f;
+            GameObject.Find("VidaImage").GetComponent<Image>().fillAmount += 0.05f;
             Debug.Log("ta certo");
             Time.timeScale = 0;
          
