@@ -144,18 +144,11 @@ public class PlayerMov : MonoBehaviour
             
        }
         
-        /*if (collision.gameObject.CompareTag("ColliderEscada"))
-        {
-            SubirEscada();
-        }*/
+       
 
     }
 
-   /* void SubirEscada()
-    {
-        Vector2 SubirEscada = new Vector2(this.transform.position.x, this.transform.position.y + 5);
-        this.transform.position = new Vector2(this.transform.position.x,SubirEscada.y);
-    }*/
+  
     public void ApagaDevagar() 
     {
         if (Light.pointLightOuterRadius<=12)
@@ -168,7 +161,7 @@ public class PlayerMov : MonoBehaviour
         }
     }public void AtivaDevagar() 
     {
-        if (Light.pointLightOuterRadius>=12)
+        if (Light.pointLightOuterRadius>=56)
         {
             CancelInvoke("AtivaDevagar");
         }
