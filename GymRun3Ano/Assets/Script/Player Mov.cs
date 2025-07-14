@@ -40,8 +40,20 @@ public class PlayerMov : MonoBehaviour
         Move();
         Jump();
         VirarJogador();
-
+        OpenChest();
        
+    }
+    public void OpenChest()
+    {
+        if (ChestSystem.instance._colliderChest)
+        {
+            if (Input.GetKey(KeyCode.E))
+            {
+
+                ChestSystem.instance._bauAberto.GetComponent<SpriteRenderer>().sprite = ChestSystem.instance._bauFechado.GetComponent<SpriteRenderer>().sprite;
+            }
+
+        }
     }
     void Move()
     {
