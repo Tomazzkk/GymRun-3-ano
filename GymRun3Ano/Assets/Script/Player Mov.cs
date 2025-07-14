@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -18,6 +19,9 @@ public class PlayerMov : MonoBehaviour
     public static PlayerMov instance;
     [SerializeField] public Animator Animator;
     public float dano= 1 ;
+    public Light2D Light;
+    
+    public float climbSpeed = 3f; // Velocidade de subida na escada
 
     private void Awake()
     {
@@ -28,6 +32,7 @@ public class PlayerMov : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
+        Light = GetComponentInChildren<Light2D>();
     }
 
     void Update()
@@ -112,10 +117,6 @@ public class PlayerMov : MonoBehaviour
             GameOver();
         }
 
-       
-
-            
-
             if (collision.gameObject.CompareTag("ObjMortal"))
             {
                  if (GameObject.Find("VidaImage").GetComponent<Image>().fillAmount <= 0.98f)
@@ -131,8 +132,51 @@ public class PlayerMov : MonoBehaviour
             }
 
             }
+
+        if (collision.gameObject.CompareTag("ColliderLight"))
+        {
+            InvokeRepeating("ApagaDevagar",0, 0.03f);
+          
+            
+       } if (collision.gameObject.CompareTag("ColliderExitLight"))
+        {
+            InvokeRepeating("AtivaDevagar",0, 0.03f);
+            
+       }
+        
+        /*if (collision.gameObject.CompareTag("ColliderEscada"))
+        {
+            SubirEscada();
+        }*/
+
     }
 
+   /* void SubirEscada()
+    {
+        Vector2 SubirEscada = new Vector2(this.transform.position.x, this.transform.position.y + 5);
+        this.transform.position = new Vector2(this.transform.position.x,SubirEscada.y);
+    }*/
+    public void ApagaDevagar() 
+    {
+        if (Light.pointLightOuterRadius<=12)
+        {
+            CancelInvoke("ApagaDevagar");
+        }
+        else
+        {
+            Light.pointLightOuterRadius--;
+        }
+    }public void AtivaDevagar() 
+    {
+        if (Light.pointLightOuterRadius>=12)
+        {
+            CancelInvoke("AtivaDevagar");
+        }
+        else
+        {
+            Light.pointLightOuterRadius++;
+        }
+    }
     public void GameOver()
     {
        
