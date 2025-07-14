@@ -43,6 +43,14 @@ public class PlayerMov : MonoBehaviour
 
        
     }
+    public void OpenChest()
+    {
+        if (ChestSystem.instance._colliderChest)
+        {
+            if (Input.GetKey(KeyCode.E)) { 
+                ChestSystem.instance._bauAberto.SpriteRenderer = 
+            }
+    }
     void Move()
     {
         float moveInput = Input.GetAxis("Horizontal");
