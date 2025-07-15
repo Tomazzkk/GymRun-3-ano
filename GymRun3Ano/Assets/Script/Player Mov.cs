@@ -47,14 +47,20 @@ public class PlayerMov : MonoBehaviour
     {
         if (ChestSystem.instance._colliderChest)
         {
-            if (Input.GetKey(KeyCode.E))
+            if (Input.GetKey(KeyCode.E) && !ChestSystem.instance._openChest)
             {
 
                 ChestSystem.instance._bauAberto.GetComponent<SpriteRenderer>().sprite = ChestSystem.instance._bauFechado.GetComponent<SpriteRenderer>().sprite;
+                Debug.Log("BauAberto");
+                ChestSystem.instance._openChest = true;
+                ChestSystem.instance.ChestPanel.SetActive(true);
+                
             }
 
         }
     }
+
+    
     void Move()
     {
         float moveInput = Input.GetAxis("Horizontal");
@@ -225,5 +231,25 @@ public class PlayerMov : MonoBehaviour
         }
     }
 
+   public  void ButtonSpeed()
+    {
+       speed = 14;
+        ChestSystem.instance.ChestPanel.SetActive(false) ;
+        ChestSystem.instance._openChest = true;
+    }
+
+    public void ButtonDamage()
+    {
+       dano = 2;
+        ChestSystem.instance._openChest = true;
+        ChestSystem.instance.ChestPanel.SetActive(false);
+    }
+
+   public  void buttonLife()
+    {
+        GameObject.Find("VidaImage").GetComponent<Image>().fillAmount += 0.10f;
+        ChestSystem.instance._openChest = true;
+        ChestSystem.instance.ChestPanel.SetActive(false);
+    }
 
 }
