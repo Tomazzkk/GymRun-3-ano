@@ -51,6 +51,7 @@ public class PlayerMov : MonoBehaviour
             {
 
                 ChestSystem.instance._bauAberto.GetComponent<SpriteRenderer>().sprite = ChestSystem.instance._bauFechado.GetComponent<SpriteRenderer>().sprite;
+                Debug.Log("BauAberto");
             }
 
         }
