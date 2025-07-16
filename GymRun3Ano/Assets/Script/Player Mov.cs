@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 
 public class PlayerMov : MonoBehaviour
 {
@@ -20,12 +21,17 @@ public class PlayerMov : MonoBehaviour
     [SerializeField] public Animator Animator;
     public float dano= 1 ;
     public Light2D Light;
-    
+    public int _desafioAlimento;
+    public TextMeshProUGUI _TextProgresso;
+    public GameObject _imageHeart;
+    public GameObject _desafioObj;
     public float climbSpeed = 3f; // Velocidade de subida na escada
 
     private void Awake()
     {
         instance = this;
+        _desafioAlimento = 0;
+       
     }
 
     void Start()
@@ -41,7 +47,27 @@ public class PlayerMov : MonoBehaviour
         Jump();
         VirarJogador();
         OpenChest();
+        DesafioHeart();
+        
+        
        
+    }
+    public void DesafioHeart(){
+        _TextProgresso.text = "(" +  _desafioAlimento.ToString() + "/10)";
+        if(_desafioAlimento >= 10){
+            
+            _imageHeart.SetActive(true);
+             Invoke("AumentaVida", 1.15f);
+             _desafioAlimento =0;
+        }
+    }
+    
+    public void AumentaVida(){
+        GameObject.Find("VidaImage").GetComponent<Image>().fillAmount += 0.10f;
+        _desafioObj.GetComponent<Animation>().Play() ;
+        _imageHeart.SetActive(false);
+
+
     }
     public void OpenChest()
     {
@@ -119,6 +145,7 @@ public class PlayerMov : MonoBehaviour
         if (collision.gameObject.CompareTag("obj"))
         {
             GameObject.Find("VidaImage").GetComponent<Image>().fillAmount += 0.05f;
+            _desafioAlimento++;
             Destroy(collision.gameObject);
         }
 
