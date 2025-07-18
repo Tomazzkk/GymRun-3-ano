@@ -127,6 +127,7 @@ public class PlayerMov : MonoBehaviour
 
             vida.fillAmount -= 0.05f;
             nextDamageTime = Time.time + damageCooldown;
+            CameraShake.instance.ShakeCamera(1f, 0.1f);
 
             if (vida.fillAmount <= 0.01f)
             {
@@ -137,7 +138,9 @@ public class PlayerMov : MonoBehaviour
         if(collision.gameObject.transform.CompareTag("Inimigo") && Input.GetKeyDown(KeyCode.Mouse0))
         {
             EnemyFollow.instance.vida -= dano;
+           
         }
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -151,8 +154,10 @@ public class PlayerMov : MonoBehaviour
 
         if (collision.gameObject.CompareTag("ComidaRuim"))
         {
+            CameraShake.instance.ShakeCamera(1f, 0.1f);
             GameObject.Find("VidaImage").GetComponent<Image>().fillAmount -= 0.05f;
             Destroy(collision.gameObject);
+           
             if (GameObject.Find("VidaImage").GetComponent<Image>().fillAmount <= 0.01f)
             {
                GameOver();

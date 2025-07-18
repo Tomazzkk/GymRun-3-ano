@@ -26,7 +26,7 @@ public class ChestSystem : MonoBehaviour
     }
     private void Update()
     {
-
+  
     }
     
 
@@ -46,6 +46,7 @@ public class ChestSystem : MonoBehaviour
         {
             _colliderChest = false;
             _panelChest.SetActive(false);
+            ChestPanel.SetActive(false);
             Debug.Log("Bau saiu da colisao");
         }
     }
