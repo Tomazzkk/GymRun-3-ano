@@ -2066,6 +2066,7 @@ GameObject:
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
   - component: {fileID: 519420033}
+  - component: {fileID: 519420034}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2181,6 +2182,50 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &519420034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_AllowHDROutput: 1
+  m_UseScreenCoordOverride: 0
+  m_ScreenSizeOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_ScreenCoordScaleBias: {x: 0, y: 0, z: 0, w: 0}
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
+  m_TaaSettings:
+    quality: 3
+    frameInfluence: 0.1
+    jitterScale: 1
+    mipBias: 0
+    varianceClampScale: 0.9
+    contrastAdaptiveSharpening: 0
 --- !u!1 &527594126
 GameObject:
   m_ObjectHideFlags: 0
@@ -21937,58 +21982,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 84168436981811532, guid: 35c7e5b164249ec4287e5cf0ec65aba3, type: 3}
-      propertyPath: m_Size.x
-      value: 0.29667196
-      objectReference: {fileID: 0}
-    - target: {fileID: 84168436981811532, guid: 35c7e5b164249ec4287e5cf0ec65aba3, type: 3}
-      propertyPath: m_Size.y
-      value: 1.0672219
-      objectReference: {fileID: 0}
-    - target: {fileID: 84168436981811532, guid: 35c7e5b164249ec4287e5cf0ec65aba3, type: 3}
-      propertyPath: m_Offset.x
-      value: 0.033703376
-      objectReference: {fileID: 0}
-    - target: {fileID: 84168436981811532, guid: 35c7e5b164249ec4287e5cf0ec65aba3, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.023603102
-      objectReference: {fileID: 0}
-    - target: {fileID: 3210290913384534708, guid: 35c7e5b164249ec4287e5cf0ec65aba3, type: 3}
-      propertyPath: Light
-      value: 
-      objectReference: {fileID: 517289295}
-    - target: {fileID: 3210290913384534708, guid: 35c7e5b164249ec4287e5cf0ec65aba3, type: 3}
-      propertyPath: speed
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 3210290913384534708, guid: 35c7e5b164249ec4287e5cf0ec65aba3, type: 3}
-      propertyPath: jumpForce
-      value: 13
-      objectReference: {fileID: 0}
-    - target: {fileID: 3210290913384534708, guid: 35c7e5b164249ec4287e5cf0ec65aba3, type: 3}
-      propertyPath: _desafioObj
-      value: 
-      objectReference: {fileID: 1298546814}
-    - target: {fileID: 3210290913384534708, guid: 35c7e5b164249ec4287e5cf0ec65aba3, type: 3}
-      propertyPath: _imageHeart
-      value: 
-      objectReference: {fileID: 782978698}
-    - target: {fileID: 3210290913384534708, guid: 35c7e5b164249ec4287e5cf0ec65aba3, type: 3}
-      propertyPath: _TextProgresso
-      value: 
-      objectReference: {fileID: 1740185546}
-    - target: {fileID: 3210290913384534708, guid: 35c7e5b164249ec4287e5cf0ec65aba3, type: 3}
-      propertyPath: _desafioAlimento
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 3614866010317238257, guid: 35c7e5b164249ec4287e5cf0ec65aba3, type: 3}
-      propertyPath: m_FlipX
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3614866010317238257, guid: 35c7e5b164249ec4287e5cf0ec65aba3, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 3779b1c80efdbf24c93e9f4fd60f910c, type: 3}
     - target: {fileID: 4020111982971035548, guid: 3e036a2531a933f419d5201d9f1bcfe8, type: 3}
       propertyPath: m_LocalScale.x
       value: 4.1
@@ -22061,6 +22054,58 @@ PrefabInstance:
       propertyPath: _TextProgresso
       value: 
       objectReference: {fileID: 1740185546}
+    - target: {fileID: 84168436981811532, guid: 35c7e5b164249ec4287e5cf0ec65aba3, type: 3}
+      propertyPath: m_Size.x
+      value: 0.29667196
+      objectReference: {fileID: 0}
+    - target: {fileID: 84168436981811532, guid: 35c7e5b164249ec4287e5cf0ec65aba3, type: 3}
+      propertyPath: m_Size.y
+      value: 1.0672219
+      objectReference: {fileID: 0}
+    - target: {fileID: 84168436981811532, guid: 35c7e5b164249ec4287e5cf0ec65aba3, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.033703376
+      objectReference: {fileID: 0}
+    - target: {fileID: 84168436981811532, guid: 35c7e5b164249ec4287e5cf0ec65aba3, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.023603102
+      objectReference: {fileID: 0}
+    - target: {fileID: 3210290913384534708, guid: 35c7e5b164249ec4287e5cf0ec65aba3, type: 3}
+      propertyPath: Light
+      value: 
+      objectReference: {fileID: 517289295}
+    - target: {fileID: 3210290913384534708, guid: 35c7e5b164249ec4287e5cf0ec65aba3, type: 3}
+      propertyPath: speed
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3210290913384534708, guid: 35c7e5b164249ec4287e5cf0ec65aba3, type: 3}
+      propertyPath: jumpForce
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 3210290913384534708, guid: 35c7e5b164249ec4287e5cf0ec65aba3, type: 3}
+      propertyPath: _desafioObj
+      value: 
+      objectReference: {fileID: 1298546814}
+    - target: {fileID: 3210290913384534708, guid: 35c7e5b164249ec4287e5cf0ec65aba3, type: 3}
+      propertyPath: _imageHeart
+      value: 
+      objectReference: {fileID: 782978698}
+    - target: {fileID: 3210290913384534708, guid: 35c7e5b164249ec4287e5cf0ec65aba3, type: 3}
+      propertyPath: _TextProgresso
+      value: 
+      objectReference: {fileID: 1740185546}
+    - target: {fileID: 3210290913384534708, guid: 35c7e5b164249ec4287e5cf0ec65aba3, type: 3}
+      propertyPath: _desafioAlimento
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3614866010317238257, guid: 35c7e5b164249ec4287e5cf0ec65aba3, type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3614866010317238257, guid: 35c7e5b164249ec4287e5cf0ec65aba3, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 3779b1c80efdbf24c93e9f4fd60f910c, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
