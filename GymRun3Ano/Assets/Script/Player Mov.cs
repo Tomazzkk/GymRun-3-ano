@@ -46,12 +46,13 @@ public class PlayerMov : MonoBehaviour
         Move();
         Jump();
         VirarJogador();
-        OpenChest();
-        DesafioHeart();
+        //OpenChest();
+        //DesafioHeart();
         
         
        
     }
+    /*
     public void DesafioHeart(){
         _TextProgresso.text = "(" +  _desafioAlimento.ToString() + "/10)";
         if(_desafioAlimento >= 10){
@@ -61,7 +62,7 @@ public class PlayerMov : MonoBehaviour
              _desafioAlimento =0;
         }
     }
-    
+    */
     public void AumentaVida(){
         GameObject.Find("VidaImage").GetComponent<Image>().fillAmount += 0.10f;
         _desafioObj.GetComponent<Animation>().Play() ;
@@ -69,6 +70,7 @@ public class PlayerMov : MonoBehaviour
 
 
     }
+    /*
     public void OpenChest()
     {
         if (ChestSystem.instance._colliderChest)
@@ -85,7 +87,7 @@ public class PlayerMov : MonoBehaviour
 
         }
     }
-
+*/
     
     void Move()
     {
@@ -154,7 +156,7 @@ public class PlayerMov : MonoBehaviour
 
         if (collision.gameObject.CompareTag("ComidaRuim"))
         {
-            CameraShake.instance.ShakeCamera(1f, 0.1f);
+            //CameraShake.instance.ShakeCamera(1f, 0.1f);
             GameObject.Find("VidaImage").GetComponent<Image>().fillAmount -= 0.05f;
             Destroy(collision.gameObject);
            
