@@ -12,6 +12,7 @@ public class ChestSystem : MonoBehaviour
     public static ChestSystem instance;
     public GameObject ChestPanel;
     public bool _openChest = false;
+    public List<GameObject> bau;
 
 
     public void Awake()
@@ -34,6 +35,7 @@ public class ChestSystem : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player") && !_openChest)
         {
+            collision.gameObject.GetComponent<PlayerMov>().bauColidido = this.GetComponent<ChestSystem>();
             _colliderChest = true;
             _panelChest.SetActive(true);
             Debug.Log("Bau colidiu com player");
@@ -44,6 +46,7 @@ public class ChestSystem : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            collision.gameObject.GetComponent<PlayerMov>().bauColidido = null;
             _colliderChest = false;
             _panelChest.SetActive(false);
             ChestPanel.SetActive(false);

@@ -14,6 +14,7 @@ public class PlayerMov : MonoBehaviour
     private float nextDamageTime = 0f;
     public float damageCooldown = 2f;
     Animator anim;
+    public ChestSystem bauColidido;
     private Rigidbody2D rb;
     public bool isGrounded;
     public List<AudioClip> audios;
@@ -73,15 +74,15 @@ public class PlayerMov : MonoBehaviour
     
     public void OpenChest()
     {
-        if (ChestSystem.instance._colliderChest)
+        if (bauColidido._colliderChest)
         {
-            if (Input.GetKey(KeyCode.E) )
+            if (Input.GetKey(KeyCode.E) && !ChestSystem.instance._openChest)
             {
 
-                ChestSystem.instance._bauAberto.GetComponent<SpriteRenderer>().sprite = ChestSystem.instance._bauFechado.GetComponent<SpriteRenderer>().sprite;
+                bauColidido._bauAberto.GetComponent<SpriteRenderer>().sprite = bauColidido._bauFechado.GetComponent<SpriteRenderer>().sprite;
                 Debug.Log("BauAberto");
-                ChestSystem.instance._openChest = true;
-                ChestSystem.instance.ChestPanel.SetActive(true);
+                bauColidido._openChest = true;
+                bauColidido.ChestPanel.SetActive(true);
                 
             }
 
