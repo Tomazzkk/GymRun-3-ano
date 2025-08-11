@@ -74,6 +74,8 @@ public class PlayerMov : MonoBehaviour
     
     public void OpenChest()
     {
+        if(bauColidido== null)
+            return; 
         if (bauColidido._colliderChest)
         {
             if (Input.GetKey(KeyCode.E) && !ChestSystem.instance._openChest)
