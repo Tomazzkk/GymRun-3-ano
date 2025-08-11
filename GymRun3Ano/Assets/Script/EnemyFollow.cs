@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class EnemyFollow : MonoBehaviour
 {
-    public Transform player,pontoA,pontoB; // Referência ao jogador
-    public float detectionRange = 30f; // Distância para começar a seguir
+    public Transform player,pontoA,pontoB; // Referï¿½ncia ao jogador
+    public float detectionRange = 30f; // Distï¿½ncia para comeï¿½ar a seguir
     public float moveSpeed = 5f;
     public bool estaNoPontoA = true;
     public Animator anim;
@@ -41,10 +41,10 @@ public class EnemyFollow : MonoBehaviour
     void Update()
     {
         if ( player == null) return;
-        if(this.transform.position.x == pontoB.position.x) 
+        if(Mathf.RoundToInt(this.transform.position.x) == Mathf.RoundToInt(pontoB.position.x)) 
         {
         estaNoPontoA = false;
-        }else if(this.transform.position.x == pontoA.position.x) 
+        }else if(Mathf.RoundToInt(this.transform.position.x) == Mathf.RoundToInt(pontoA.position.x)) 
         {
         estaNoPontoA=true;
         }
