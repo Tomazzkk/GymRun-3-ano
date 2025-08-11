@@ -48,7 +48,14 @@ public class PlayerMov : MonoBehaviour
         Jump();
         VirarJogador();
         OpenChest();
-        //DesafioHeart();
+        if(Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            anim.SetBool("Soco", true);
+        }
+        else if(Input.GetKeyUp(KeyCode.Mouse0))
+        {
+            anim.SetBool("Soco", false);
+        }
         
         
        
