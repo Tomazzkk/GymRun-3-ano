@@ -139,7 +139,7 @@ public class PlayerMov : MonoBehaviour
 
             vida.fillAmount -= 0.05f;
             nextDamageTime = Time.time + damageCooldown;
-            CameraShake.instance.ShakeCamera(1f, 0.1f);
+            //CameraShake.instance.ShakeCamera(1f, 0.1f);
 
             if (vida.fillAmount <= 0.01f)
             {
