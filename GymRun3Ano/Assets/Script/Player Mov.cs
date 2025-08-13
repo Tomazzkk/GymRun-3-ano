@@ -8,8 +8,8 @@ using TMPro;
 
 public class PlayerMov : MonoBehaviour
 {
-    public float speed = 5f;
-    public float jumpForce = 10f;
+    public float speed = 3f;
+    public float jumpForce = 8f;
     public LayerMask groundLayer;
     private float nextDamageTime = 0f;
     public float damageCooldown = 2f;
@@ -149,7 +149,7 @@ public class PlayerMov : MonoBehaviour
 
         if(collision.gameObject.transform.CompareTag("Inimigo") && Input.GetKeyDown(KeyCode.Mouse0))
         {
-            EnemyFollow.instance.vida -= dano;
+            collision.gameObject.GetComponent<EnemyFollow>().vida -= dano;
            
         }
 
@@ -213,7 +213,7 @@ public class PlayerMov : MonoBehaviour
   
     public void ApagaDevagar() 
     {
-        if (Light.pointLightOuterRadius<=12)
+        if (Light.pointLightOuterRadius<=10)
         {
             CancelInvoke("ApagaDevagar");
         }
