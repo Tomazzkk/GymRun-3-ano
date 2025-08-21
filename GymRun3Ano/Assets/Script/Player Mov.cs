@@ -27,6 +27,7 @@ public class PlayerMov : MonoBehaviour
     public GameObject _imageHeart;
     public GameObject _desafioObj;
     public float climbSpeed = 3f; // Velocidade de subida na escada
+    public CapsuleCollider2D collider;
 
     private void Awake()
     {
@@ -40,6 +41,7 @@ public class PlayerMov : MonoBehaviour
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         Light = GetComponentInChildren<Light2D>();
+        collider = GetComponent<CapsuleCollider2D>();
     }
 
     void Update()
@@ -48,6 +50,7 @@ public class PlayerMov : MonoBehaviour
         Jump();
         VirarJogador();
         OpenChest();
+        Agachar();
         if(Input.GetKeyDown(KeyCode.Mouse0))
         {
             anim.SetBool("Soco", true);
@@ -78,7 +81,20 @@ public class PlayerMov : MonoBehaviour
 
 
     }
-    
+    public void Agachar()
+    {
+        if (Input.GetKeyDown(KeyCode.S)){
+            anim.SetBool("Agachado", true );
+            collider.GetComponent<CapsuleCollider2D>().size =  new Vector2(0.45f, 0.62f);
+            speed = 3;
+        }
+        if (Input.GetKeyUp(KeyCode.S)){
+            anim.SetBool("Agachado", false);
+            collider.GetComponent<CapsuleCollider2D>().size =  new Vector2(0.45f, 0.98f);
+        }
+
+
+    }
     public void OpenChest()
     {
         if(bauColidido== null)
