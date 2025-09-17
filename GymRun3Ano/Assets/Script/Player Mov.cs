@@ -261,7 +261,7 @@ public class PlayerMov : MonoBehaviour
     public void BotaoVoltarGameOver()
     {
         GameManager.instance.gameOverPanel.SetActive(false);
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("ScenePowerStation");
         Time.timeScale = 1;
     }
 
