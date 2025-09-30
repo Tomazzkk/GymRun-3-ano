@@ -28,9 +28,10 @@ public class PlayerMov : MonoBehaviour
     public GameObject _desafioObj;
     public float climbSpeed = 3f; // Velocidade de subida na escada
     public CapsuleCollider2D collider;
-
+    public bool EstaNaescada;
     private void Awake()
     {
+        EstaNaescada = false;
         instance = this;
         _desafioAlimento = 0;
        
@@ -119,7 +120,18 @@ public class PlayerMov : MonoBehaviour
     {
         float moveInput = Input.GetAxis("Horizontal");
             rb.velocity = new Vector2(moveInput * speed, rb.velocity.y);              
-            rb.velocity = new Vector2(moveInput * speed, rb.velocity.y);      
+            rb.velocity = new Vector2(moveInput * speed, rb.velocity.y);
+        if (EstaNaescada)
+        {
+            float moveInputY = Input.GetAxis("Vertical");
+            rb.velocity = new Vector2(rb.velocity.x,moveInputY *speed);
+            anim.SetBool("SubindoEscada", true);
+
+        }
+        if (!EstaNaescada)
+        {
+            anim.SetBool("SubindoEscada", false);
+        }
     }
     void Jump()
     {
@@ -171,13 +183,29 @@ public class PlayerMov : MonoBehaviour
 
     }
 
+    public void TrocaDeMapa()
+    {
+        if(SceneManager.GetActiveScene().name == "ScenePowerStation" )
+        {
+            SceneManager.LoadScene("Mapa Floresta");
+        }else if(SceneManager.GetActiveScene().name == "Mapa Floresta")
+        {
+            SceneManager.LoadScene("ScenePowerStation");
+        }
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.gameObject.CompareTag("Portal"))
+        {
+            TrocaDeMapa();
+        }
         if (collision.gameObject.CompareTag("obj"))
         {
             GameObject.Find("VidaImage").GetComponent<Image>().fillAmount += 0.05f;
             _desafioAlimento++;
             Destroy(collision.gameObject);
+            //SceneManager.GetActiveScene(). como vericar a cena atual
         }
 
         if (collision.gameObject.CompareTag("ComidaRuim"))
@@ -221,7 +249,11 @@ public class PlayerMov : MonoBehaviour
             InvokeRepeating("AtivaDevagar",0, 0.03f);
             
        }
-        
+        if (collision.gameObject.CompareTag("ColliderEscada"))
+        {
+            EstaNaescada = true;
+           
+        }
        
 
     }
@@ -305,6 +337,14 @@ public class PlayerMov : MonoBehaviour
         GameObject.Find("VidaImage").GetComponent<Image>().fillAmount += 0.10f;
         ChestSystem.instance._openChest = true;
         ChestSystem.instance.ChestPanel.SetActive(false);
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("ColliderEscada"))
+        {
+            EstaNaescada=false;
+        }
+
     }
 
 }
