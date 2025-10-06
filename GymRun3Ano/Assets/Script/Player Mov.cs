@@ -13,7 +13,9 @@ public class PlayerMov : MonoBehaviour
     public LayerMask groundLayer;
     private float nextDamageTime = 0f;
     public float damageCooldown = 2f;
+    public bool adquiriuPoder;
     Animator anim;
+    public float timerPoder = Time.time;
     public ChestSystem bauColidido;
     private Rigidbody2D rb;
     public bool isGrounded;
@@ -29,6 +31,7 @@ public class PlayerMov : MonoBehaviour
     public float climbSpeed = 3f; // Velocidade de subida na escada
     public CapsuleCollider2D collider;
     public bool EstaNaescada;
+    public float tempoPowerUp = 5f;
     private void Awake()
     {
         EstaNaescada = false;
@@ -318,11 +321,19 @@ public class PlayerMov : MonoBehaviour
         }
     }
 
+
    public  void ButtonSpeed()
     {
        speed = 14;
         ChestSystem.instance.ChestPanel.SetActive(false) ;
         ChestSystem.instance._openChest = true;
+        adquiriuPoder = true;
+        Invoke("CancelaSpeed",tempoPowerUp);
+    }
+    public void CancelaSpeed()
+    {
+        //speed normallizada
+        speed = 5;
     }
 
     public void ButtonDamage()
@@ -330,6 +341,13 @@ public class PlayerMov : MonoBehaviour
        dano = 2;
         ChestSystem.instance._openChest = true;
         ChestSystem.instance.ChestPanel.SetActive(false);
+        adquiriuPoder = true;
+        Invoke("CancelaDano",tempoPowerUp);
+    }
+
+    public void CancelaDano()
+    {
+            dano = 1;
     }
 
    public  void buttonLife()
@@ -337,7 +355,10 @@ public class PlayerMov : MonoBehaviour
         GameObject.Find("VidaImage").GetComponent<Image>().fillAmount += 0.10f;
         ChestSystem.instance._openChest = true;
         ChestSystem.instance.ChestPanel.SetActive(false);
+        adquiriuPoder = true;
     }
+
+
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("ColliderEscada"))
