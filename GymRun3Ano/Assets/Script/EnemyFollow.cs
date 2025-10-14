@@ -65,13 +65,27 @@ public class EnemyFollow : MonoBehaviour
             transform.position = new Vector2(transform.position.x + direction.x * moveSpeed * Time.deltaTime, transform.position.y);
         }
 
-        if(vida <= 0)
+        /* if(vida <= 0)
         {
             Destroy(gameObject);
+        } */
+
+        EnemyDie();
+
+    }
+
+    public void EnemyDie()
+    {
+        if(vida <= 0)
+        {
+            anim.SetBool("Morreu", true);
+            Invoke("DestroyEnemy", 1f);
         }
-        
-
-
+    }
+    
+    public void DestroyEnemy()
+    {
+        Destroy(gameObject);
     }
 
 }
