@@ -8,6 +8,9 @@ using TMPro;
 
 public class PlayerMov : MonoBehaviour
 {
+    public float attackRadius = 0.8f;        // raio da esfera do ataque
+    public float attackDistance = 2.0f; 
+    public LayerMask hitMask;    
     public float speed = 3f;
     public float jumpForce = 8f;
     public LayerMask groundLayer;
@@ -55,9 +58,11 @@ public class PlayerMov : MonoBehaviour
         VirarJogador();
         OpenChest();
         Agachar();
+        
         if(Input.GetKeyDown(KeyCode.Mouse0))
         {
             anim.SetBool("Soco", true);
+            Ataque();
         }
         else if(Input.GetKeyUp(KeyCode.Mouse0))
         {
@@ -185,6 +190,45 @@ public class PlayerMov : MonoBehaviour
         }
 
     }
+    public void Ataque()
+    {
+       
+            // cria um ray a partir da câmera pela posição do mouse
+            Ray camRay = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+            // tenta encontrar um ponto de alvo no mundo (pode ser o chão, inimigo, etc.)
+            if (Physics.Raycast(camRay, out RaycastHit mouseHit, 100f, 0, QueryTriggerInteraction.Ignore))
+            {
+                Vector3 origin = transform.position;                       // origem do ataque (player)
+                Vector3 direction = (mouseHit.point - origin).normalized;  // direção do ataque
+
+                // opcional: desenhar a direção e raio para debug (visível na Scene)
+                Debug.DrawRay(origin, direction * attackDistance, Color.red, 1f);
+                Debug.DrawLine(origin, mouseHit.point, Color.yellow, 1f);
+
+                // executa o SphereCast
+                if (Physics.SphereCast(origin, attackRadius, direction, out RaycastHit hitInfo, attackDistance, hitMask, QueryTriggerInteraction.Ignore))
+                {
+                    // acertou algo — exemplo curto de tratamento:
+                    Debug.Log("Acertou: " + hitInfo.collider.name);
+
+                    // tenta aplicar dano a um componente 'Enemy' (adaptar ao seu sistema)
+                    var enemy = hitInfo.collider.GetComponent<EnemyFollow>();
+                    if (enemy != null)
+                    {
+                        hitInfo.collider.GetComponent<EnemyFollow>().vida -= dano;
+                    }
+                    
+                }
+                else
+                {
+                    Debug.Log("Ataque não acertou nada.");
+                }
+            
+        }
+    }
+        
+    
 
     public void TrocaDeMapa()
     {
