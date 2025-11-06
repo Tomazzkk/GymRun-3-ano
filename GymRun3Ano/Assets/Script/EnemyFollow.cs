@@ -78,7 +78,7 @@ public class EnemyFollow : MonoBehaviour
     {
         if(vida <= 0)
         {
-            anim.SetBool("Morreu", true);
+            anim.SetTrigger("Morreu");
             Invoke("DestroyEnemy", 1f);
         }
     }
