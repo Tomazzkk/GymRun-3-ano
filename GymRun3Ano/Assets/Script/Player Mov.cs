@@ -1,10 +1,11 @@
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using TMPro;
+using static UnityEngine.UI.Image;
 
 public class PlayerMov : MonoBehaviour
 {
@@ -182,51 +183,37 @@ public class PlayerMov : MonoBehaviour
                 GameOver();
             }
         }
-
+        /*
         if(collision.gameObject.transform.CompareTag("Inimigo") && Input.GetKeyDown(KeyCode.Mouse0))
         {
             collision.gameObject.GetComponent<EnemyFollow>().vida -= dano;
            
         }
+        */
 
     }
     public void Ataque()
     {
-       
-            // cria um ray a partir da câmera pela posição do mouse
-            Ray camRay = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-            // tenta encontrar um ponto de alvo no mundo (pode ser o chão, inimigo, etc.)
-            if (Physics.Raycast(camRay, out RaycastHit mouseHit, 100f, 0, QueryTriggerInteraction.Ignore))
+        RaycastHit2D hit = Physics2D.CircleCast(this.transform.position, attackRadius, Vector3.one, attackDistance, hitMask);
+
+        if (hit.collider != null)
+        {
+            Debug.Log("Acertou: " + hit.collider.name);
+
+            // tenta aplicar dano (exemplo)
+            var enemy = hit.collider.GetComponent<EnemyFollow>();
+            if (enemy != null)
             {
-                Vector3 origin = transform.position;                       // origem do ataque (player)
-                Vector3 direction = (mouseHit.point - origin).normalized;  // direção do ataque
-
-                // opcional: desenhar a direção e raio para debug (visível na Scene)
-                Debug.DrawRay(origin, direction * attackDistance, Color.red, 1f);
-                Debug.DrawLine(origin, mouseHit.point, Color.yellow, 1f);
-
-                // executa o SphereCast
-                if (Physics.SphereCast(origin, attackRadius, direction, out RaycastHit hitInfo, attackDistance, hitMask, QueryTriggerInteraction.Ignore))
-                {
-                    // acertou algo — exemplo curto de tratamento:
-                    Debug.Log("Acertou: " + hitInfo.collider.name);
-
-                    // tenta aplicar dano a um componente 'Enemy' (adaptar ao seu sistema)
-                    var enemy = hitInfo.collider.GetComponent<EnemyFollow>();
-                    if (enemy != null)
-                    {
-                        hitInfo.collider.GetComponent<EnemyFollow>().vida -= dano;
-                    }
-                    
-                }
-                else
-                {
-                    Debug.Log("Ataque não acertou nada.");
-                }
-            
+                enemy.GetComponent<EnemyFollow>().vida-=1;
+            }
+        }
+        else
+        {
+            Debug.Log("Ataque não acertou nada.");
         }
     }
+
         
     
 
@@ -305,7 +292,11 @@ public class PlayerMov : MonoBehaviour
 
     }
 
-  
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position + transform.forward * (attackDistance * 0.5f), attackRadius);
+    }
     public void ApagaDevagar() 
     {
         if (Light.pointLightOuterRadius<=10)
