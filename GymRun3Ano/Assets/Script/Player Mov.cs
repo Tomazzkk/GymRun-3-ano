@@ -111,7 +111,7 @@ public class PlayerMov : MonoBehaviour
             return; 
         if (bauColidido._colliderChest)
         {
-            if (Input.GetKey(KeyCode.E) && !ChestSystem.instance._openChest)
+            if (Input.GetKey(KeyCode.E) && !bauColidido._openChest)
             {
 
                 bauColidido._bauAberto.GetComponent<SpriteRenderer>().sprite = bauColidido._bauFechado.GetComponent<SpriteRenderer>().sprite;

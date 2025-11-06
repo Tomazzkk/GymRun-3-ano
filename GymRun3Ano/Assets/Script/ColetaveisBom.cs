@@ -34,7 +34,7 @@ public class ColetaveisBom : MonoBehaviour
     
     public void PainelDica()
     {
-        if (GameManager.instance.contdicas >= 10)
+        if (GameManager.instance.contdicas >= 3)
         {
             GameManager.instance.panelDica.SetActive(true);
             Time.timeScale = 0;
