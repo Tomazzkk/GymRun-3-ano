@@ -36,6 +36,7 @@ public class PlayerMov : MonoBehaviour
     public CapsuleCollider2D collider;
     public bool EstaNaescada;
     public float tempoPowerUp = 5f;
+    public static int contador = 0;
     private void Awake()
     {
         EstaNaescada = false;
@@ -54,6 +55,7 @@ public class PlayerMov : MonoBehaviour
 
     void Update()
     {
+        PainelDica();
         Move();
         Jump();
         VirarJogador();
@@ -101,6 +103,7 @@ public class PlayerMov : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.S)){
             anim.SetBool("Agachado", false);
             collider.GetComponent<CapsuleCollider2D>().size =  new Vector2(0.45f, 0.98f);
+            speed = 5;
         }
 
 
@@ -228,6 +231,19 @@ public class PlayerMov : MonoBehaviour
         }
     }
 
+    public void PainelDica()
+    {
+        if (GameManager.instance.contdicas >= 4)
+        {
+            GameManager.instance.panelDica.GetComponent<Image>().sprite = GameManager.instance.images[contador];
+            GameManager.instance.panelDica.SetActive(true);
+            contador++;
+            Time.timeScale = 0;
+            GameManager.instance.contdicas = 0;
+        }
+
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Portal"))
@@ -238,7 +254,9 @@ public class PlayerMov : MonoBehaviour
         {
             GameObject.Find("VidaImage").GetComponent<Image>().fillAmount += 0.05f;
             _desafioAlimento++;
+            GameManager.instance.contdicas++;
             Destroy(collision.gameObject);
+
             //SceneManager.GetActiveScene(). como vericar a cena atual
         }
 
@@ -359,7 +377,7 @@ public class PlayerMov : MonoBehaviour
 
    public  void ButtonSpeed()
     {
-       speed = 14;
+       speed = 8;
         ChestSystem.instance.ChestPanel.SetActive(false) ;
         ChestSystem.instance._openChest = true;
         adquiriuPoder = true;

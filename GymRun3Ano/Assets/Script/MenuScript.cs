@@ -9,7 +9,7 @@ public class MenuScript : MonoBehaviour
     public GameObject panelMenu;
     public void PlayButton()
     {
-        SceneManager.LoadScene("ScenePowerStation");
+        SceneManager.LoadScene("Mapa Floresta");
         Time.timeScale = 1.0f;
     }
 

@@ -9,9 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu.unity
     guid: 6285f19e3e5a9b549ba7abcfb26676e4
   - enabled: 1
-    path: Assets/Scenes/ScenePowerStation.unity
-    guid: c47de55106e39304aafbf5a308b2e8fa
-  - enabled: 1
     path: Assets/Scenes/Mapa Floresta.unity
     guid: 204891867ed5001498f86e3af58873ac
+  - enabled: 1
+    path: Assets/Scenes/ScenePowerStation.unity
+    guid: c47de55106e39304aafbf5a308b2e8fa
   m_configObjects: {}

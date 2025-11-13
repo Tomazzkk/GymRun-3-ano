@@ -145,7 +145,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 488.8, y: -17.9, z: 0}
-  m_LocalScale: {x: 4.1, y: 4.1, z: 4.1}
+  m_LocalScale: {x: 2.23, y: 2.23, z: 2.23}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4576416036147286712}
@@ -192,7 +192,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 3779b1c80efdbf24c93e9f4fd60f910c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -263,8 +263,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.033703376, y: 0.023603102}
-  m_Size: {x: 0.29667196, y: 1.0672219}
+  m_Offset: {x: 0.03370338, y: 0.016044393}
+  m_Size: {x: 0.29667196, y: 1.082339}
   m_Direction: 0
 --- !u!114 &9008473629967888447
 MonoBehaviour:
@@ -278,12 +278,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: decd0dc893f4448448a0c045755e2867, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 7
-  jumpForce: 13
+  attackRadius: 1
+  attackDistance: 3
+  hitMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  speed: 5
+  jumpForce: 9
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
   damageCooldown: 2
+  adquiriuPoder: 0
+  timerPoder: 0
+  bauColidido: {fileID: 0}
   isGrounded: 0
   audios:
   - {fileID: 8300000, guid: c4384d8109c0ca643a11682afd6b9495, type: 3}
@@ -291,7 +299,14 @@ MonoBehaviour:
   Animator: {fileID: 7815342391366704518}
   dano: 1
   Light: {fileID: 4684025191844922537}
+  _desafioAlimento: 0
+  _TextProgresso: {fileID: 0}
+  _imageHeart: {fileID: 0}
+  _desafioObj: {fileID: 0}
   climbSpeed: 3
+  collider: {fileID: 0}
+  EstaNaescada: 0
+  tempoPowerUp: 5
 --- !u!82 &3415900262216255755
 AudioSource:
   m_ObjectHideFlags: 0

@@ -8,8 +8,8 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
   //  public GameObject mapSegmentPrefab;  // Prefab da parte do mapa
-    public Transform player;             // Referência ao jogador
-   // public int maxSegments = 3;          // Quantidade máxima de segmentos ativos
+    public Transform player;             // Referï¿½ncia ao jogador
+   // public int maxSegments = 3;          // Quantidade mï¿½xima de segmentos ativos
     //public float segmentWidth = 10f;     // Largura de cada segmento
     //public float offsetPos;
     public int randomInt;
@@ -17,73 +17,19 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject pauseButton;
     //public List<GameObject> mapas = new List<GameObject>();
     //private List<GameObject> activeSegments = new List<GameObject>();
-    //public Vector3 nextSpawnPosition; // Próxima posição para spawnar um segmento
+    //public Vector3 nextSpawnPosition; // Prï¿½xima posiï¿½ï¿½o para spawnar um segmento
     public GameObject panelDica;
     public int contdicas;
     public static GameManager instance;
     public GameObject gameOverPanel;
-    
+    public List<Sprite> images = new List<Sprite>();
+
     private void Awake()
     {
         instance = this;
     
     }
-    /*
-    void Start()
-    {
-        randomInt = 0;
-        GameObject newSegment = Instantiate(mapSegmentPrefab, nextSpawnPosition, Quaternion.identity);
-        activeSegments.Add(newSegment);
-        nextSpawnPosition.x += segmentWidth + offsetPos; // Atualiza posição para o próximo segmento
-        //RemoveOldSegment();
-        // Inicia criando os primeiros segmentos
-        for (int i = 0; i < maxSegments; i++)
-        {
-            SpawnSegment();
-        }
-    }
-
-    
-    void Update()
-    {
-        // Se o jogador ultrapassar a posição do último segmento criado
-        if (player.position.x > nextSpawnPosition.x - (maxSegments * segmentWidth))
-        {
-            SpawnSegment();  // Cria um novo segmento na frente
-           // Remove o segmento mais antigo
-        }
-    }
-    
-
-    
-    void SpawnSegment()
-    {
-        
-        GameObject newSegment = Instantiate(mapas[randomInt], nextSpawnPosition, Quaternion.identity);
-        activeSegments.Add(newSegment);
-        nextSpawnPosition.x += segmentWidth + offsetPos; // Atualiza posição para o próximo segmento
-        randomInt++;
-
-        if(randomInt == 20)
-        {
-            randomInt = 2;
-        }
-
-        RemoveOldSegment();
-    }
-    
-
-    
-    void RemoveOldSegment()
-    {
-        if (activeSegments.Count > maxSegments)
-        {
-            GameObject oldSegment = activeSegments[0];
-            activeSegments.RemoveAt(0);
-            Destroy(oldSegment);
-        }
-    }
-    */
+   
 
     public void Pause()
     {
@@ -108,7 +54,7 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 1;
         panelDica.SetActive(false);
-        Debug.Log("Botão FeitoButton foi pressionado!");
+        Debug.Log("Botï¿½o FeitoButton foi pressionado!");
     }
 
     
